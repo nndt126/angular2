@@ -26,7 +26,7 @@ __decorate([
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hello {{name}}</h1>\n  <my-demo></my-demo>\n  <button (click)=\"changeName()\" >Change name</button>\n  /* Demo two way binding */\n  <br/>\n  <input type=\"text\" [(ngModel)] = \"fname\" />\n  <input type=\"text\" [(ngModel)] = \"lname\" />\n  <br/>\n  Full name : {{fname}} {{lname}}\n  ",
+        template: "\n  <h1>Hello {{name}}</h1>\n  <my-demo></my-demo>\n  <button (click)=\"changeName()\" >Change name</button><br/>\n  <br/>\n  /**\n   * Demo two way binding\n   */ \n  <br/>\n  <br/>\n  <input type=\"text\" [(ngModel)] = \"fname\" />\n  <input type=\"text\" [(ngModel)] = \"lname\" />\n  <br/>\n  Full name : {{fname}} {{lname}}<br/>\n  <br/>\n  /**\n   * customPipes in custom.pipe.ts\n   */\n  <p>2^10 : {{2 | customPipes:10}}</p>\n  ",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
