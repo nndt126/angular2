@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hello {{name}}</h1>\n  <my-demo></my-demo>",
+        template: "\n  <h1>Hello {{name}}</h1>\n  <my-demo></my-demo>\n  \n  /* Demo two way binding */\n  <br/>\n  <input type=\"text\" [(ngModel)] = \"fname\" />\n  <input type=\"text\" [(ngModel)] = \"lname\" />\n  <br/>\n  Full name : {{fname}} {{lname}}\n  ",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
