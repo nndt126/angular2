@@ -15,8 +15,13 @@ export class EmployeeService {
     }
     getList(): Observable<any[]> {
         return this._http
-        .get(this.employeeAPI)
-        .map((response: Response) => response.json());
+            .get(this.employeeAPI)
+            .map((response: Response) => response.json());
+    }
+    getEmployeeById(id: number): Observable<any> {
+        return this._http
+            .get(this.employeeAPI + '/' + id)
+            .map((response: Response) => response.json());
     }
     // getList(): any[] {
     //     let employees: any[] = [

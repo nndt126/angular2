@@ -15,6 +15,10 @@
       <td>{{employee.username}}</td>
       <td>{{employee.pass}}</td>
       <td>{{employee.createdAt | date}}</td>
+      <td>
+        <a [routerLink] ="['/employee-detail',employee.id]">Show Detail</a>
+        <!-- <button type="button" class="btn btn-info" (click)="gotoDetail()" >View Detail</button> -->
+      </td>
     </tr>
   </tbody>
 </table>

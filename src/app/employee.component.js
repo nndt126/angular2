@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./services/employee.service");
 var common_1 = require("@angular/common");
+var router_1 = require("@angular/router");
 var EmployeeListComponent = (function () {
-    function EmployeeListComponent(employeeService, location) {
+    function EmployeeListComponent(employeeService, location, router) {
         this.employeeService = employeeService;
         this.location = location;
+        this.router = router;
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -35,7 +37,8 @@ EmployeeListComponent = __decorate([
         templateUrl: './employee.component.html',
     }),
     __metadata("design:paramtypes", [employee_service_1.EmployeeService,
-        common_1.Location])
+        common_1.Location,
+        router_1.Router])
 ], EmployeeListComponent);
 exports.EmployeeListComponent = EmployeeListComponent;
 //# sourceMappingURL=employee.component.js.map
