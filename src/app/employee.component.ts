@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from './services/employee.service';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'employee-list',
@@ -7,9 +8,10 @@ import { EmployeeService } from './services/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
     public employees: any[];
-    constructor(private employeeService: EmployeeService) {
-        /* Khai báo constructor để khai báo khởi tạo */
-    }
+    constructor(
+        private employeeService: EmployeeService,
+        private location: Location
+    ) {/* Khai báo constructor để khai báo khởi tạo */ }
     ngOnInit() {
         this.employeeService.getList().subscribe((response: any) => {
             this.employees = response;
@@ -17,5 +19,8 @@ export class EmployeeListComponent implements OnInit {
             error => {
                 console.log(error);
             });
+    }
+    goBack(): void {
+        this.location.back();
     }
 }

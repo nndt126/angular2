@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class DemoComponent {
-
     @Input() yourName: string = 'Word';
     setName(name: string) {
         this.yourName = name;

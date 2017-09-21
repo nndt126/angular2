@@ -10,10 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./services/employee.service");
+var common_1 = require("@angular/common");
 var EmployeeListComponent = (function () {
-    function EmployeeListComponent(employeeService) {
+    function EmployeeListComponent(employeeService, location) {
         this.employeeService = employeeService;
-        /* Khai báo constructor để khai báo khởi tạo */
+        this.location = location;
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,6 +24,9 @@ var EmployeeListComponent = (function () {
             console.log(error);
         });
     };
+    EmployeeListComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     return EmployeeListComponent;
 }());
 EmployeeListComponent = __decorate([
@@ -30,7 +34,8 @@ EmployeeListComponent = __decorate([
         selector: 'employee-list',
         templateUrl: './employee.component.html',
     }),
-    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
+    __metadata("design:paramtypes", [employee_service_1.EmployeeService,
+        common_1.Location])
 ], EmployeeListComponent);
 exports.EmployeeListComponent = EmployeeListComponent;
 //# sourceMappingURL=employee.component.js.map

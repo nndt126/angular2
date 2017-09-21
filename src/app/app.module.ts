@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { CustomPipes } from './custom.pipe';
 import { EmployeeListComponent } from './employee.component';
 import { EmployeeService } from './services/employee.service';
+import {HomeComponent} from './home.component';
 import { HttpModule } from '@angular/http';
+import { appRoutes } from './app.routes';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, HttpModule],
-  declarations: [AppComponent, DemoComponent, CustomPipes, EmployeeListComponent],
+  imports: [BrowserModule, FormsModule, HttpModule, appRoutes],
+  declarations: [AppComponent, DemoComponent, HomeComponent, EmployeeListComponent],
   /* Gắn service vào component = provider */
   providers: [EmployeeService],
   bootstrap: [AppComponent]
