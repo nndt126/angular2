@@ -5,10 +5,15 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo.component';
 import { FormsModule } from '@angular/forms';
 import { CustomPipes } from './custom.pipe';
+import { EmployeeListComponent } from './employee.component';
+import { EmployeeService } from './services/employee.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, DemoComponent, CustomPipes],
+  imports: [BrowserModule, FormsModule, HttpModule],
+  declarations: [AppComponent, DemoComponent, CustomPipes, EmployeeListComponent],
+  /* Gắn service vào component = provider */
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

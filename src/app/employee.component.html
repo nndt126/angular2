@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>UserName</td>
+      <td>Pass</td>
+      <td>Created at</td>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.username}}</td>
+      <td>{{employee.pass}}</td>
+      <td>{{employee.createdAt | date}}</td>
+    </tr>
+  </tbody>
+</table>
