@@ -12,6 +12,7 @@ var demo_component_1 = require("./demo.component");
 var forms_1 = require("@angular/forms");
 var employee_component_1 = require("./employee.component");
 var employee_detail_component_1 = require("./employee-detail.component");
+var employee_overview_component_1 = require("./employee-overview.component");
 var employee_service_1 = require("./services/employee.service");
 var home_component_1 = require("./home.component");
 var http_1 = require("@angular/http");
@@ -24,7 +25,14 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routes_1.appRoutes],
-        declarations: [app_component_1.AppComponent, demo_component_1.DemoComponent, home_component_1.HomeComponent, employee_component_1.EmployeeListComponent, employee_detail_component_1.EmployeeDetailComponent],
+        declarations: [
+            app_component_1.AppComponent,
+            demo_component_1.DemoComponent,
+            home_component_1.HomeComponent,
+            employee_component_1.EmployeeListComponent,
+            employee_detail_component_1.EmployeeDetailComponent,
+            employee_overview_component_1.EmployeeOverViewComponent
+        ],
         /* Gắn service vào component = provider */
         providers: [employee_service_1.EmployeeService],
         bootstrap: [app_component_1.AppComponent]
