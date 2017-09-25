@@ -5,18 +5,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
+var login_services_1 = require("./services/login.services");
+var common_1 = require("@angular/common");
 var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+    function AppComponent(loginService, location) {
+        this.loginService = loginService;
+        this.location = location;
+        this.dateNow = new Date();
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.isLogin = this.loginService.IsLogged();
+    };
+    AppComponent.prototype.logOut = function () {
+        this.loginService.SetLogin(false);
+        this.location.back();
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hello {{name}}</h1>\n  <my-demo></my-demo>",
-    })
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css'],
+    }),
+    __metadata("design:paramtypes", [login_services_1.LoginService, common_1.Location])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
