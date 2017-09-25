@@ -9,30 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var login_services_1 = require("./services/login.services");
-var common_1 = require("@angular/common");
-var AppComponent = (function () {
-    function AppComponent(loginService, location) {
+var LoginComponent = (function () {
+    function LoginComponent(router, loginService) {
+        this.router = router;
         this.loginService = loginService;
-        this.location = location;
-        this.dateNow = new Date();
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.isLogin = this.loginService.IsLogged();
+    LoginComponent.prototype.CheckLogin = function (value) {
+        console.log(value);
+        if (value.username === 'admin' && value.password === '123') {
+            this.loginService.SetLogin(true);
+            this.router.navigate(['/']);
+        }
     };
-    AppComponent.prototype.logOut = function () {
-        this.loginService.SetLogin(false);
-        this.location.back();
-    };
-    return AppComponent;
+    return LoginComponent;
 }());
-AppComponent = __decorate([
+LoginComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.css'],
+        selector: 'login-component',
+        templateUrl: './login.component.html',
+        styleUrls: ['./login.css'],
     }),
-    __metadata("design:paramtypes", [login_services_1.LoginService, common_1.Location])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [router_1.Router, login_services_1.LoginService])
+], LoginComponent);
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

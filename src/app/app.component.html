@@ -3,10 +3,12 @@
     <ul>
         <li><a routerLink ="" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/employees" routerLinkActive="active">Employee</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a (click)="logOut()">LogOut</a></li>
     </ul>
 </section>
 <router-outlet></router-outlet>
 
 <section>
-    <h1>Footer</h1>
+    <h3>{{dateNow | date}}</h3>
 </section>
