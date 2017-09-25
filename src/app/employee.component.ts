@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
     public employees: any[];
+    public keyWord: string;
     constructor(
         private employeeService: EmployeeService,
         private location: Location,
@@ -33,6 +34,14 @@ export class EmployeeListComponent implements OnInit {
     }
     GetData() {
         this.employeeService.getList().subscribe((response: any) => {
+            this.employees = response;
+        },
+            error => {
+                console.log(error);
+            });
+    }
+    Search() {
+        this.employeeService.search(this.keyWord).subscribe((response: any) => {
             this.employees = response;
         },
             error => {

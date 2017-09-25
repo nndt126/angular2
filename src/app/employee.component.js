@@ -44,6 +44,14 @@ var EmployeeListComponent = (function () {
             console.log(error);
         });
     };
+    EmployeeListComponent.prototype.Search = function () {
+        var _this = this;
+        this.employeeService.search(this.keyWord).subscribe(function (response) {
+            _this.employees = response;
+        }, function (error) {
+            console.log(error);
+        });
+    };
     return EmployeeListComponent;
 }());
 EmployeeListComponent = __decorate([

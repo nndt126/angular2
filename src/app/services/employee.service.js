@@ -24,6 +24,11 @@ var EmployeeService = (function () {
             .get(this.employeeAPI)
             .map(function (response) { return response.json(); });
     };
+    EmployeeService.prototype.search = function (keyWord) {
+        return this._http
+            .get(this.employeeAPI + '?search=' + keyWord)
+            .map(function (response) { return response.json(); });
+    };
     EmployeeService.prototype.getEmployeeById = function (id) {
         return this._http
             .get(this.employeeAPI + '/' + id)

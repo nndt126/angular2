@@ -18,6 +18,11 @@ export class EmployeeService {
             .get(this.employeeAPI)
             .map((response: Response) => response.json());
     }
+    search(keyWord: string): Observable<any[]> {
+        return this._http
+            .get(this.employeeAPI + '?search=' + keyWord)
+            .map((response: Response) => response.json());
+    }
     getEmployeeById(id: number): Observable<any> {
         return this._http
             .get(this.employeeAPI + '/' + id)
