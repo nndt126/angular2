@@ -11,16 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var login_services_1 = require("./services/login.services");
+var common_1 = require("@angular/common");
 var LoginComponent = (function () {
-    function LoginComponent(router, loginService) {
+    function LoginComponent(router, loginService, location) {
         this.router = router;
         this.loginService = loginService;
+        this.location = location;
     }
     LoginComponent.prototype.CheckLogin = function (value) {
         console.log(value);
         if (value.username === 'admin' && value.password === '123') {
             this.loginService.SetLogin(true);
-            this.router.navigate(['/']);
+            this.router.navigate(['employees']);
         }
     };
     return LoginComponent;
@@ -31,7 +33,9 @@ LoginComponent = __decorate([
         templateUrl: './login.component.html',
         styleUrls: ['./login.css'],
     }),
-    __metadata("design:paramtypes", [router_1.Router, login_services_1.LoginService])
+    __metadata("design:paramtypes", [router_1.Router,
+        login_services_1.LoginService,
+        common_1.Location])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

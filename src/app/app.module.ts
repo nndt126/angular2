@@ -14,6 +14,8 @@ import { appRoutes } from './app.routes';
 import {LoginComponent} from './login.component';
 import { LoginService } from './services/login.services';
 import {CheckLoginGuard} from './guards/check-login.guard';
+import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, appRoutes],
@@ -24,6 +26,8 @@ import {CheckLoginGuard} from './guards/check-login.guard';
     HomeComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,
+    EmployeeEditComponent,
+    EmployeeAddComponent,
     EmployeeOverViewComponent,
     LoginComponent
   ],

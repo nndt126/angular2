@@ -23,6 +23,21 @@ export class EmployeeService {
             .get(this.employeeAPI + '/' + id)
             .map((response: Response) => response.json());
     }
+    UpdateEmployee(id: number, data: any): Observable<any> {
+        return this._http
+            .put(this.employeeAPI + '/' + id, data)
+            .map((response: Response) => response.json());
+    }
+    AddEmployee(data: any): Observable<any> {
+        return this._http
+            .post(this.employeeAPI, data)
+            .map((response: Response) => response.json());
+    }
+    DeleteEmployee(id: number): Observable<any> {
+        return this._http
+            .delete(this.employeeAPI + '/' + id)
+            .map((response: Response) => response.json());
+    }
     // getList(): any[] {
     //     let employees: any[] = [
     //         { Id: 1, Name: "Nguyen Van A" },

@@ -19,15 +19,30 @@ var EmployeeListComponent = (function () {
         this.router = router;
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
+        this.GetData();
+    };
+    EmployeeListComponent.prototype.goBack = function () {
+        this.location.back();
+    };
+    EmployeeListComponent.prototype.Delete = function (id) {
+        var _this = this;
+        var confirmResult = confirm("Are you sure to delete Employee?");
+        if (confirmResult) {
+            this.employeeService.DeleteEmployee(id).subscribe(function (response) {
+                if (response) {
+                    alert('Delete successfull');
+                    _this.GetData();
+                }
+            });
+        }
+    };
+    EmployeeListComponent.prototype.GetData = function () {
         var _this = this;
         this.employeeService.getList().subscribe(function (response) {
             _this.employees = response;
         }, function (error) {
             console.log(error);
         });
-    };
-    EmployeeListComponent.prototype.goBack = function () {
-        this.location.back();
     };
     return EmployeeListComponent;
 }());

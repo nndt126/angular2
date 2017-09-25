@@ -1,5 +1,7 @@
 <button type="button" class="btn btn-primary" (click)="goBack()">Go back</button>
+<button type="button" class="btn btn-infor" [routerLink]="['/employee-add']">Add new</button>
 <br/>
+
 <table class="table">
   <thead>
     <tr>
@@ -16,7 +18,9 @@
       <td>{{employee.pass}}</td>
       <td>{{employee.createdAt | date}}</td>
       <td>
-        <a [routerLink] ="['/employee-detail',employee.id]">Show Detail</a>
+        <button type="button" class="btn btn-info" [routerLink]="['/employee-detail',employee.id]">Show Detail</button> |
+        <button type="button" class="btn btn-success" [routerLink]="['/employee-edit',employee.id]">Edit</button> |
+        <button type="button" class="btn btn-danger" (click)="Delete(employee.id)">Delete</button>
         <!-- <button type="button" class="btn btn-info" (click)="gotoDetail()" >View Detail</button> -->
       </td>
     </tr>

@@ -20,6 +20,8 @@ var app_routes_1 = require("./app.routes");
 var login_component_1 = require("./login.component");
 var login_services_1 = require("./services/login.services");
 var check_login_guard_1 = require("./guards/check-login.guard");
+var employee_edit_component_1 = require("./employee-edit.component");
+var employee_add_component_1 = require("./employee-add.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,6 +36,8 @@ AppModule = __decorate([
             home_component_1.HomeComponent,
             employee_component_1.EmployeeListComponent,
             employee_detail_component_1.EmployeeDetailComponent,
+            employee_edit_component_1.EmployeeEditComponent,
+            employee_add_component_1.EmployeeAddComponent,
             employee_overview_component_1.EmployeeOverViewComponent,
             login_component_1.LoginComponent
         ],

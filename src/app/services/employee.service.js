@@ -29,6 +29,21 @@ var EmployeeService = (function () {
             .get(this.employeeAPI + '/' + id)
             .map(function (response) { return response.json(); });
     };
+    EmployeeService.prototype.UpdateEmployee = function (id, data) {
+        return this._http
+            .put(this.employeeAPI + '/' + id, data)
+            .map(function (response) { return response.json(); });
+    };
+    EmployeeService.prototype.AddEmployee = function (data) {
+        return this._http
+            .post(this.employeeAPI, data)
+            .map(function (response) { return response.json(); });
+    };
+    EmployeeService.prototype.DeleteEmployee = function (id) {
+        return this._http
+            .delete(this.employeeAPI + '/' + id)
+            .map(function (response) { return response.json(); });
+    };
     return EmployeeService;
 }());
 EmployeeService = __decorate([
